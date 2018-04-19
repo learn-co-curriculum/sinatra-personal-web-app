@@ -22,14 +22,14 @@ class Instagram
 end
 
 class InstagramPhoto
-  attr_accessor :display_url, :shortcode, :timestamp, :likes, :text
+  attr_accessor :display_url, :shortcode, :timestamp, :likes, :url
   def self.new_from_edge(e)
     self.new.tap do |i|
       i.display_url = e["node"]["display_url"]
       i.shortcode = e["node"]["shortcode"]
       i.timestamp = e["node"]["taken_at_timestamp"]
       i.likes = e["node"]["edge_liked_by"]["count"]
-      i.text = e["node"]["edge_media_to_caption"]["edges"]["node"]["text"]
+      i.url = "https://instagram.com/p/#{i.shortcode}"
     end
   end
 end
