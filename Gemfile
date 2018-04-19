@@ -7,9 +7,11 @@ gem 'sqlite3'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
+gem 'dotenv'
 
 group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'rack-test'
+  gem 'dotenv'
 end
