@@ -1,0 +1,28 @@
+<div class="container">
+  
+  <div class="col-md-8 col-md-offset-2">
+    <h2>My Homepage</h2>
+
+    <div class="content">
+      <h3>Latest Repositories on Github</h3>
+
+      <ul>
+        <% @github.repos[0..5].each do |repo| %>
+        <li><a href="<%= repo.url %>"><%= repo.name %></a></li>
+        <% end %>
+      </ul>
+
+      <h3>Latest Repositories on Github</h3>
+
+      <ul>
+        <% @instagram.photos[0..5].each do |photo| %>
+        <li>
+          <img src="<%= photo.display_url %>" />
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+  </div>
+</div>

@@ -8,7 +8,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    @instagram = Instagram.new('karliekloss')
+    @github = Github.new('karliekloss')
+
+    erb :index
   end
 
 end
