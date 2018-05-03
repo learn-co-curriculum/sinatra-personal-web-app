@@ -20,6 +20,22 @@
         </li>
         <% end %>
       </ul>
+
+      <h3>My Playlists</h3>
+      <ul>
+        <% @my_playlists.each do |playlist| %>
+        <li>
+          <a href="<%= playlist.external_urls["spotify"] %>">
+            <%= playlist.name %>
+            <ol>
+            <% playlist.tracks[0..4].each do |track| %>
+              <li><a href="<%= track.external_urls["spotify"] %>"><%= track.name %></a></li>
+            <% end %>
+            </ol>
+          </a>
+        </li>
+        <% end %>
+      </ul>      
     </div>
   </div>
 </div>

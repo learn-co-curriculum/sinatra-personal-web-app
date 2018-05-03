@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
   get "/" do
     @instagram = Instagram.new('karliekloss')
     @github = Github.new('karliekloss')
-
+    @my_playlists = Spotify.new.my_playlists
+    
     erb :index
   end
 
